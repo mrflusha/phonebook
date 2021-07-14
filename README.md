@@ -1,2 +1,2 @@
 # phonebook
-<img src='db.png'>
+<img src='uml/db.png'>

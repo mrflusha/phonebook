@@ -18,6 +18,7 @@ FA_DATABASE(db1,,database,white) #RoyalBlue
 rectangle bd as "Дата рождения"
 rectangle pw as "Пароль"
 rectangle names as "Имя пользователя"
+rectangle name as "Имена"
 rectangle phone_num as "Номер Телефона"
 rectangle id as "id"
 
@@ -30,9 +31,11 @@ note right of phone_num : 00000000000 - 9999999999
 note right of bd : 01.01.1900 - 01.01.2021
 note right of pw : A-Z
 note right of names : A - Z
+note right of name: A - Z
+rectangle base_phones as "<U+0020>Имя\n--\nНомер телефона\n--\nДата рождения"
 }
 
-
+id --> base_phones 
 
 
 
