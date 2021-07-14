@@ -1,0 +1,41 @@
+@startuml
+left to right direction
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+!include <tupadr3/font-awesome/database>
+
+
+
+package Application <<$app{scale=2}>> {
+}
+
+database Database <<$app>> {
+
+
+package phonebookParameters <<$db{scale=2}>> {
+FA_DATABASE(db1,,database,white) #RoyalBlue
+
+rectangle bd as "Дата рождения"
+rectangle pw as "Пароль"
+rectangle names as "Имя пользователя"
+rectangle phone_num as "Номер Телефона"
+rectangle id as "id"
+
+}
+
+package phonebookConstraints <<$db{scale=2}>> {
+FA_DATABASE(db2,_,database) #Red
+note right of id : Уникальное поле
+note right of phone_num : 00000000000 - 9999999999
+note right of bd : 01.01.1900 - 01.01.2021
+note right of pw : A-Z
+note right of names : A - Z
+}
+
+
+
+
+
+
+Application --> Database : <<call>>
+@enduml
