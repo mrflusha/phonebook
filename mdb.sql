@@ -1,15 +1,23 @@
+DROP DATABASE IF EXISTS phonebook;
 CREATE DATABASE phonebook;
 
 USE phonebook;
 
-CREATE TABLE phonebook(
+CREATE TABLE users(
 `id` int(5) auto_increment NOT NULL primary key,
 `login` varchar(15) NOT NULL,
 `password` varchar(15) NOT NULL,
-`phone_num` varchar(100) NOT NULL,
-`bd` varchar(15)
+`bd` varchar(15) NOT NULL
+);
+CREATE Table phonebook(
+`id` int(5) auto_increment NOT NULL primary key,
+`user_id` int (5) NOT NULL,
+`name` varchar(100) NOT NULL,
+`phone_num` varchar(20) NOT NULL,
+`bd` varchar(15) NOT NULL,
+FOREIGN KEY(`user_id`) REFERENCES users(`id`)
 );
 
-insert into `phonebook`(`login`,`password`,`phone_num`,`bd`) VALUES ('admin','password','+79999999999','09.11.2001');
+insert into `users`(`login`,`password`,`bd`) VALUES ('admin','password','09.11.2001');
 
-select * from phonebook;
+select * from users;
